@@ -13,17 +13,26 @@ Decode php encoded with eval statements.
 
 
 ##Use
+
+>Usage: php eval_decode.php full_path_to.php stepDumpFlag overwriteFlag    //default flag is 0
+>Usage: php eval_decode.php full_path_to.php                               //default no step dump out
+>Usage: php eval_decode.php full_path_to.php 1                             //step by step dump out
+>Usage: php eval_decode.php full_path_to.php 0 1                           //no step dump and overwrite original php file
+
 >Decode a single file  It's best to provide the "Full path" to the file.
-	php replace.php <FILENAME>.PHP  
-	
+>php eval_decode.php <FILENAME>.php 
+
 >####Linux/OSX
 >Decode All Files inside Folder Recursively
 
->>_$ find . -type f -name "*.php" -exec php replace.php \{} \;_
-	
+>>_$ find . -type f -name "*.php" -exec php eval_decode.php 0 1\{} \;_
+
 >####Windows/DOS (Untested) 
 >Decode All Files inside Folder Recursively 
->>_for /r %f in (*.php) do php replace.php %f_
+>>_for /r %f in (*.php) do php eval_decode.php %f_
+
+##Demo
+php eval_decode.php demo/evalFile.php
 
 ##TODO 
 >#####Usabile output without further editing
